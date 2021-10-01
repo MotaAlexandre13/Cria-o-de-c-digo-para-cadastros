@@ -15,12 +15,17 @@ int adicionar(void)
 {
     FILE*info_cad;
     info_cad = fopen("Informacoes_Cadastradas.csv","a");
-    int p;
-    //id = 0;
+    int p, id;
+    id = 0;
 
     struct Registros cadastros;
+    
+    if(id <= fprintf(info_cad, "%d", id))
+    {
+        id++;
+    }
 
-    //if(id == 0)
+    if(id == 0)
     {
         fprintf(info_cad, "Cadastro");
         fprintf(info_cad, "Nome");
@@ -38,12 +43,6 @@ int adicionar(void)
     }
     do
     {
-        int id, idSalva;
-        id = 0;
-        while(id == 0)
-        {
-            id++;
-        }
         cout << "\n\n\t\t\t\t\tCADASTRANDO CLIENTE " << id <<"\n\n";
 
         cout << "\tNome.........: ";
@@ -101,9 +100,8 @@ int adicionar(void)
         fprintf(info_cad, cadastros.codPedido.c_str());
         fprintf(info_cad, cadastros.dataSaida.c_str());
         fprintf(info_cad, cadastros.dataEntrega.c_str());
-        fprintf(info_cad, "\n");
-        idSalva = fprintf(info_cad, "\n");
-
+        fprintf(info_cad, "\n")
+            
         cout << "\n\t\tDeseja realizar outro cadastro?\n ";
         cout << "\n\tSim -- Digite (1)\n";
         cout << "\n\tNao -- Digite qualquer tecla\n";
